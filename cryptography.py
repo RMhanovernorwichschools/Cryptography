@@ -51,7 +51,7 @@ while True:
             fin_n=str_n-key_n
             while fin_n>85:
                 fin_n -= 85
-            while fin_n<85:
+            while fin_n<0:
                 fin_n +=85
             kterm+=1
             if kterm==len(key):
