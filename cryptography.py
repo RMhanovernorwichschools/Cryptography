@@ -22,45 +22,58 @@ while True:
         string=input('Message: ')
         key=input('Key: ')
         kterm=0
-        for x in list(string):
-            for n in range(len(assoguide)):
-                if assoguide[n][0]==x:
-                    str_n=assoguide[n][1]
-                if assoguide[n][0]==list(key)[kterm]:
-                    key_n=assoguide[n][1]
-            fin_n=str_n+key_n
-            while fin_n>85:
-                fin_n -= 85
-            kterm+=1
-            if kterm==len(key):
-                kterm=0
-            for n in range(len(assoguide)):
-                if assoguide[n][1]==fin_n:
-                    piece=assoguide[n][0]
-            answer=answer+piece
+        if string=='':
+            answer=''
+        elif key=='':
+            answer=string
+        else:
+            for x in list(string):
+                for n in range(len(assoguide)):
+                    if assoguide[n][0]==x:
+                        str_n=assoguide[n][1]
+                    if assoguide[n][0]==list(key)[kterm]:
+                        key_n=assoguide[n][1]
+                fin_n=str_n+key_n
+                while fin_n>85:
+                    fin_n -= 85
+                kterm+=1
+                if kterm==len(key) or kterm>len(key):
+                    kterm=0
+                for n in range(len(assoguide)):
+                    if assoguide[n][1]==fin_n:
+                        piece=assoguide[n][0]
+                answer=answer+piece
         print(answer)
     elif task=='d':
         string=input('Message: ')
         key=input('Key: ')
         kterm=0
-        for x in list(string):
-            for n in range(len(assoguide)):
-                if assoguide[n][0]==x:
-                    str_n=assoguide[n][1]
-                if assoguide[n][0]==list(key)[kterm]:
-                    key_n=assoguide[n][1]
-            fin_n=str_n-key_n
-            while fin_n>85:
-                fin_n -= 85
-            while fin_n<0:
-                fin_n +=85
-            kterm+=1
-            if kterm==len(key):
-                kterm=0
-            for n in range(len(assoguide)):
-                if assoguide[n][1]==fin_n:
-                    piece=assoguide[n][0]
-            answer=answer+piece
+        if string=='':
+            answer=''
+        elif key=='':
+            answer=string
+        else:
+            string=input('Message: ')
+            key=input('Key: ')
+            kterm=0
+            for x in list(string):
+                for n in range(len(assoguide)):
+                    if assoguide[n][0]==x:
+                        str_n=assoguide[n][1]
+                    if assoguide[n][0]==list(key)[kterm]:
+                        key_n=assoguide[n][1]
+                fin_n=str_n-key_n
+                while fin_n>85:
+                    fin_n -= 85
+                while fin_n<0:
+                    fin_n +=85
+                kterm+=1
+                if kterm==len(key):
+                    kterm=0
+                for n in range(len(assoguide)):
+                    if assoguide[n][1]==fin_n:
+                        piece=assoguide[n][0]
+                answer=answer+piece
         print(answer)
     else:
         print('Did not understand command, try again.')
