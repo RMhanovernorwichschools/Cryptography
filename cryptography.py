@@ -31,10 +31,10 @@ while True:
             while fin_n>85:
                 fin_n -= 85
             kterm+=1
-            if kterm>len(key):
+            if kterm==len(key):
                 kterm=0
             for n in range(len(assoguide)):
                 if assoguide[n][1]==fin_n:
                     piece=assoguide[n][0]
             answer=answer+piece
-            print(answer)
+        print(answer)
