@@ -1,7 +1,7 @@
 """
 cryptography.py
-Author: <your name here>
-Credit: <list sources used, if any>
+Author: Rachel Matthew
+Credit: none
 
 Assignment:
 
@@ -16,6 +16,7 @@ while True:
     answer=''
     task=input('Enter e to encrypt, d to decrypt, or q to quit: ')
     if task=='q':
+        print('Goodbye!')
         break
     elif task=='e':
         string=input('Message: ')
@@ -61,3 +62,5 @@ while True:
                     piece=assoguide[n][0]
             answer=answer+piece
         print(answer)
+    else:
+        print('Did not understand command, try again.')
