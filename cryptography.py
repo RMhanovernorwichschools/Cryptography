@@ -53,8 +53,6 @@ while True:
         elif key=='':
             answer=string
         else:
-            string=input('Message: ')
-            key=input('Key: ')
             kterm=0
             for x in list(string):
                 for n in range(len(assoguide)):
